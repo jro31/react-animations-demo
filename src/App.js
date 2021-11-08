@@ -31,13 +31,7 @@ class App extends Component {
           Toggle
         </button>
         <br />
-        {/* The 'in' prop determines whether the contained element(s) should be visible or not */}
-        {/* The 'timeout' prop determines how long the animation should be (in milliseconds) */}
-        {/* 'mountOnEnter' says that if the 'in' prop is true, the contained element should be added to the DOM */}
-        {/* 'unmountOnExit' says that if the 'in' prop is false, the contained element should be removed from the DOM */}
         <Transition in={this.state.showBlock} timeout={300} mountOnEnter unmountOnExit>
-          {/* Within the <Transition> component you create a function, which has a 'state' argument */}
-          {/* This 'state' argument will be 'entering', 'entered', 'exiting' or 'exited' */}
           {state => (
             <div
               style={{
@@ -51,8 +45,10 @@ class App extends Component {
             ></div>
           )}
         </Transition>
-        {this.state.modalIsOpen && <Modal show={this.state.modalIsOpen} closed={this.closeModal} />}
-        {this.state.modalIsOpen && <Backdrop show={this.state.modalIsOpen} />}
+        <Transition mountOnEnter unmountOnExit in={this.state.modalIsOpen} timeout={300}>
+          {state => <Modal show={state} closed={this.closeModal} />}
+        </Transition>
+        {this.state.modalIsOpen && <Backdrop show />}
         <button className='Button' onClick={this.showModal}>
           Open Modal
         </button>
