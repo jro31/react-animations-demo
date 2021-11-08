@@ -21,7 +21,7 @@
 }
 
 .ModalClosed {
-  animation: closeModal 0.4s ease-out forwards;
+  animation: closeModal 1s ease-out forwards;
 }
 
 /* The percentages describe how the element should look 'that' far through the animation */
