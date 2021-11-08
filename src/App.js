@@ -65,3 +65,8 @@ class App extends Component {
 }
 
 export default App;
+
+// Some alternatives to 'react-transition-group'
+// React-Motion (https://github.com/chenglou/react-motion) - Has impressive animations such as solar system and water ripples
+// React-Move (https://github.com/sghall/react-move)
+// React Router Transition (https://github.com/maisano/react-router-transition) - Builds on React Router, where you replace the <Switch> component with an <AnimatedSwitch> component to add animation when you switch between pages
