@@ -31,7 +31,14 @@ class App extends Component {
           Toggle
         </button>
         <br />
-        <Transition in={this.state.showBlock} timeout={300} mountOnEnter unmountOnExit>
+        <Transition
+          in={this.state.showBlock}
+          timeout={300}
+          mountOnEnter
+          unmountOnExit
+          onEnter={() => console.log('onEnter')}
+        >
+          {/* <Transition> has 6 callback props: 'onEnter', 'onEntering', 'onEntered', 'onExit', 'onExiting' and 'onExited' */}
           {state => (
             <div
               style={{

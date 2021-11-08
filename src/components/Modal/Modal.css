@@ -10,48 +10,21 @@
   top: 30%;
   left: 25%;
   width: 50%;
-  transition: all 0.3s ease-out; /* 'all' means use this transition on all styling changes, 'ease-out' means that you start faster than you end */
-  /* Using 'display: block' and 'display: none' to show/hide an element, will prevent 'transition' from working */
+  transition: all 0.3s ease-out;
 }
 
-.ModalOpen {
-  /* 'ease-out' defines how it should move between the individual steps of the 'openModal' animation */
-  /* 'forwards' tells the animation to end on the final step (the default would be to return to the first step) */
+.fade-slide-enter {
+  /* Could add the initial 'enter' styling here */
+}
+
+.fade-slide-enter-active {
   animation: openModal 0.4s ease-out forwards;
 }
 
-.ModalClosed {
+.fade-slide-exit {
+  /* Could add the initial 'exit' styling here */
+}
+
+.fade-slide-exit-active {
   animation: closeModal 1s ease-out forwards;
-}
-
-/* The percentages describe how the element should look 'that' far through the animation */
-/* So 0% is how it should look at the start, 100% is how it should look at the end, and 50% is how it should look half-way through */
-@keyframes openModal {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(20%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes closeModal {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 0.8;
-    transform: translateY(60%);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
 }
