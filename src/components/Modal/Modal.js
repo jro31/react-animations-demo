@@ -15,14 +15,15 @@ const modal = props => {
       unmountOnExit
       in={props.show}
       timeout={animationTiming}
-      classNames='fade-slide'
+      classNames={{
+        enter: '',
+        enterActive: 'ModalOpen',
+        exit: '',
+        exitActive: 'ModalClosed',
+      }}
     >
-      {/* The <CSSTransition> 'classNames' prop (note the 's') defines which CSS classes should be added to the wrapped element (so to the '<div className='Modal'>' element below) */}
-      {/* It will add the named className(s) prepended to 'enter', 'enter-active', 'exit' and 'exit-active' */}
-      {/* For example, the 'fade-slide-enter' class is added right before the component starts 'entering' (but then removed almost immediately (after one frame) - this class is used to set the initial styling (for example, to set the opacity to 0)) */}
-      {/* 'fade-slide-enter-active' is added immediately after 'fade-slide-enter', but remains for the duration of the 'entering' state */}
-      {/* 'fade-slide-exit' and 'fade-slide-exit-active' are the same, but for 'exiting' */}
-      {/* 'https://reactcommunity.org/react-transition-group/css-transition' has a good example of this */}
+      {/* This instead uses custom CSS classes, instead of 'fade-slide-enter', 'fade-slide-enter-active' etc */}
+      {/* You also get 'appear:' and 'appearActive:' classNames. These are for when an element is first mounted to ths DOM (I think just when the page loads, although not too sure about these) */}
       <div className='Modal'>
         <h1>A Modal</h1>
         <button className='Button' onClick={props.closed}>
