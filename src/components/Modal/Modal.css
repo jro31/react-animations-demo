@@ -10,12 +10,16 @@
   top: 30%;
   left: 25%;
   width: 50%;
+  transition: all 0.3s ease-out; /* 'all' means use this transition on all styling changes, 'ease-out' means that you start faster than you end */
+  /* Using 'display: block' and 'display: none' to show/hide an element, will prevent 'transition' from working */
 }
 
 .ModalOpen {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .ModalClosed {
-  display: none;
+  opacity: 0;
+  transform: translateY(-100%);
 }
